@@ -24,7 +24,6 @@ const StyledButton = styled.button`
 `;
 
 const Button = (props) => {
-  const { children } = props;
   return (
     <StyledButton {...props}>
 
