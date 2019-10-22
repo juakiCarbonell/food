@@ -12,7 +12,7 @@ const App = (props) => {
       {props.children}
       <NavBar />
       <Video/>
-      <CardContainer justifyContent='space-around'/>
+      <CardContainer flexDirection='column'/>
       
     </ThemeProvider>
   );

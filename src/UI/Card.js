@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex } from 'reflexbox';
+import { Flex } from 'reflexbox/styled-components';
 import styled from "styled-components";
 import { layout } from 'styled-system';
 import Text from './Text';
@@ -14,8 +14,8 @@ const StyledCard = styled(Flex)`
 const Card = (props) => {
   return (
     <StyledCard 
-      width={[1, 1 / 2, 1 / 4]} 
-      flexDirection="Column"
+      width={[1, 1 / 2, 1 / 4]}
+      mx = "auto" 
       {...props}
     > 
       <Image />        
@@ -25,7 +25,8 @@ const Card = (props) => {
 };
 
 Card.defaultProps = {
-  p: 2
+  p: 2,
+  flexDirection: 'column'
 };
 
 export default Card;
