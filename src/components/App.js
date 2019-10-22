@@ -1,7 +1,7 @@
 import React from 'react';
-import Button from '../UI/Button';
 import NavBar from '../UI/NavBar';
-import CardContainer from '../UI/CardContainer'
+import CardContainer from '../UI/CardContainer';
+import Video from './Video';
 
 import { ThemeProvider } from 'styled-components'
 import theme from '../UI/theme'
@@ -11,14 +11,7 @@ const App = (props) => {
     <ThemeProvider theme={theme}>
       {props.children}
       <NavBar />
-      <Button color="white" bg="grey">
-        Hello
-      </Button>
-      <Button color="white" bg="green">
-        Hello
-      </Button>
-      <Button variant='primary'>Primary</Button>
-      <Button variant='danger'>Primary</Button>
+      <Video />
       <CardContainer justifyContent='space-around'/>
       
     </ThemeProvider>
