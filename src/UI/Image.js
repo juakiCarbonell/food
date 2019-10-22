@@ -1,5 +1,5 @@
 import React from 'react';
-import img from '../multimedia/images/paella.jpg';
+import img from '../multimedia/images/gate.jpeg';
 
 import styled from "styled-components";
 

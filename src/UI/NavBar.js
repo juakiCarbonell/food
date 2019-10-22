@@ -1,7 +1,7 @@
 import React from 'react';
-import { Flex, Box } from 'reflexbox'
-import Button from './Button'
-import Branch from './Branch'
+import { Flex, Box } from 'reflexbox/styled-components';
+import Button from './Button';
+import Branch from './Branch';
 import styled from "styled-components";
 import { color } from "styled-system";
 
@@ -16,11 +16,18 @@ const StyledBranch = styled(Flex)`
 
 
 const NavBar = (props) => {
+  console.log('theme', props)
   return (
     <StyledBranch {...props}>
-      <Branch m={2} p={2}>Branch</Branch>
+      <Branch 
+        m={2} 
+        p={2}
+        alignItems="center"
+        >
+        Branch
+      </Branch>
       <Box mx='auto' />
-      <Flex mx={3}>
+      <Flex mx={3} {...props}>
         <Button variant='primary' m={0} px={2}>Primary</Button>
         <Button variant='primary' m={0} px={2}>Primary</Button>
       </Flex>
@@ -29,7 +36,7 @@ const NavBar = (props) => {
 };
 
 NavBar.defaultProps = {
-  bg: "yellow",
+  bg: "yellow"
 };
 
 export default NavBar;

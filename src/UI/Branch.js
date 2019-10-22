@@ -1,23 +1,25 @@
 import React from 'react';
-import { space, typography } from "styled-system";
+import { Flex } from 'reflexbox/styled-components';
 import styled from "styled-components";
+import { space } from "styled-system";
+import { faHamburger } from '@fortawesome/free-solid-svg-icons';
 
 
+import Icon from './Icon';
 import Text from './Text';
 
-const StyledBranch = styled.div`
-  ${space}
-  ${typography}
-  border:none;
+
+const StyledBranch = styled(Flex)`
   outline: 1px solid black;
-  cursor: pointer;
-`;
+  ${space}
+`
+
 
 const Branch = (props) => {
-  console.log (props)
   return (
-    <StyledBranch {...props}>
-      <Text text="Branch" textAlign='center'></Text>
+    <StyledBranch {...props} alignItems="Center">
+      <Icon icon={faHamburger}/>
+      <Text ml={2} text="Branch" textAlign='center'></Text>
     </StyledBranch>
   );
 };

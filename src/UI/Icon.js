@@ -1,18 +1,21 @@
 
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHamburger } from '@fortawesome/free-solid-svg-icons'
-import { Box } from 'reflexbox'
+import { space } from "styled-system";
+import { Box } from 'reflexbox/styled-components';
+import styled from "styled-components";
 
 
-
-
-const Icon = () => {
-  return (
-    <Box>
-      <FontAwesomeIcon icon={faHamburger} />
-    </Box>  
+const Icon = (props) =>  {
+  console.log(props)
+  return(
+    <FontAwesomeIcon icon={props.icon}/>  
   );
 };
+
+Icon.propTypes = {
+  ...space.propTypes
+};
+
 
 export default Icon;

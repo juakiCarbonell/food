@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box } from 'reflexbox';
+import { Box } from 'reflexbox/styled-components';
 import styled from "styled-components";
 import { space } from "styled-system";
 

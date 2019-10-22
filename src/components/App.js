@@ -6,9 +6,10 @@ import Card from '../UI/Card'
 import { ThemeProvider } from 'styled-components'
 import theme from '../UI/theme'
 
-const App = () => {
+const App = (props) => {
   return (
     <ThemeProvider theme={theme}>
+      {props.children}
       <NavBar />
       <Button color="white" bg="grey">
         Hello
