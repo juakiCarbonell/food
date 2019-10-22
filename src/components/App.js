@@ -11,7 +11,7 @@ const App = (props) => {
     <ThemeProvider theme={theme}>
       {props.children}
       <NavBar />
-      <Video />
+      <Video/>
       <CardContainer justifyContent='space-around'/>
       
     </ThemeProvider>
