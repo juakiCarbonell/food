@@ -1,7 +1,8 @@
 import React from 'react';
-import { Flex, Box } from 'reflexbox';
+import { Flex } from 'reflexbox';
 import styled from "styled-components";
-import { layout } from 'styled-system'
+import { layout } from 'styled-system';
+import Text from './Text';
 
 import Image from './Image'
 
@@ -12,9 +13,13 @@ const StyledCard = styled(Flex)`
 
 const Card = (props) => {
   return (
-    <StyledCard width={[1, 1 / 2, 1 / 4]} {...props}>
+    <StyledCard 
+      width={[1, 1 / 2, 1 / 4]} 
+      flexDirection="Column"
+      {...props}
+    > 
       <Image />        
-      <Box />        
+      <Text text="Berlin" textAlign='center' mt={1} fontSize={3}/>        
     </StyledCard>
   );
 };

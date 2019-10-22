@@ -1,11 +1,12 @@
 import React from 'react';
 import { Box } from 'reflexbox/styled-components';
 import styled from "styled-components";
-import { space } from "styled-system";
+import { space, typography } from "styled-system";
 
 
 const StyledText = styled(Box)`
   width: 100%
+  ${typography}
   ${space}
 `
 

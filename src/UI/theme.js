@@ -13,12 +13,13 @@ export default {
   breakpoints: ["40em", "72em", "92em"],
   space: [0, 5, 10, 20],
   fontWeights: [400, 700, 900],
-  fontSizes: {
-    small: "11px",
-    medium: "13px",
-    large: "16px",
-    hero: "32px"
-  },
+  // fontSizes: {
+  //   small: "11px",
+  //   medium: "13px",
+  //   large: "16px",
+  //   hero: "32px"
+  // },
+  fontSizes: [11, 13, 16, 32],
   colors: {
     red,
     yellow,
