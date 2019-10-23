@@ -2,11 +2,11 @@ import React from 'react';
 import { Flex } from 'reflexbox/styled-components';
 import Card from './Card';
 import styled from "styled-components";
-import { layout, space } from 'styled-system';
+import { space } from 'styled-system';
 
 const StyledCardContainer = styled(Flex)`
   border: 1px solid black;
-  ${layout}
+  flex-direction: ${props => props.isMobile ? "column" : "row"}
   ${space}
 `
 
