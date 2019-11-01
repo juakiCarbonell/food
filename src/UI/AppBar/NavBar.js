@@ -1,18 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from "styled-components";
-import { Flex} from 'reflexbox'
 import {useSpring, animated} from 'react-spring';
 import BurgerMenu from './BurgerMenu';
 import Brand from './Brand';
 import NavLinks from './NavLinks';
+import CollapseMenu from './CollapseMenu';
 
 
 const NavBar = (props)  => {
+
+  const [navBarOpen, setNavBarOpen] = useState(false);  
 
   const navBarAnimation = useSpring({
     from: {transform: 'translate(0,-5rem)'},
     transform: 'translate(0,0)'
   })
+
 
   const StyledNavBar = styled(animated.nav)`
     width: 100%;
@@ -33,18 +36,25 @@ const NavBar = (props)  => {
   `;
 
   const handleNavbar = () =>{
-    console.log('eee')
+    setNavBarOpen(!navBarOpen)
   }
 
-
   return (
-    <StyledNavBar style={navBarAnimation}>
-      <FlexContainer>
-        <Brand />
-        <NavLinks />
-        <BurgerMenu handleClick={handleNavbar}/>
-      </FlexContainer>
-    </StyledNavBar>
+    <>
+      <StyledNavBar style={navBarAnimation}>
+        <FlexContainer>
+          <Brand />
+          <NavLinks />
+          <BurgerMenu 
+            handleClick={handleNavbar}
+            navbarState={navBarOpen} 
+          />
+        </FlexContainer>
+      </StyledNavBar>
+      <CollapseMenu 
+        navbarState={navBarOpen} 
+      />
+    </>
   
   );
 };

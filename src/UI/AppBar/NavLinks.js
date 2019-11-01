@@ -11,7 +11,10 @@ const StiledNavLinks = styled.ul`
     }
 `
 
+
+
 const NavLinks = () => {
+
   return (
     <StiledNavLinks>
       <NavLink text="Link 1"/>
