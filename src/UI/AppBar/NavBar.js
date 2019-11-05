@@ -5,23 +5,24 @@ import BurgerMenu from './BurgerMenu';
 import Brand from './Brand';
 import NavLinks from './NavLinks';
 import CollapseMenu from './CollapseMenu';
+import { color } from 'styled-system';
 
 
 const NavBar = (props)  => {
 
-  const [navBarOpen, setNavBarOpen] = useState(false);  
+  const [open, setOpen] = useState(false);
 
-  const navBarAnimation = useSpring({
-    from: {transform: 'translate(0,-5rem)'},
-    transform: 'translate(0,0)'
-  })
-
+  const handleClick = () => {
+    console.log("handleClick")
+    setOpen(!open)
+  }
 
   const StyledNavBar = styled(animated.nav)`
     width: 100%;
     top: 0;
     left: 0;
-    background: #AAA;
+    ${color}
+    z-index: 2;
   `;
 
   const FlexContainer = styled.div`
@@ -35,25 +36,17 @@ const NavBar = (props)  => {
     align-items: center;
   `;
 
-  const handleNavbar = () =>{
-    setNavBarOpen(!navBarOpen)
-  }
 
   return (
     <>
-      <StyledNavBar style={navBarAnimation}>
+      <StyledNavBar {...props}>
         <FlexContainer>
           <Brand />
           <NavLinks />
-          <BurgerMenu 
-            handleClick={handleNavbar}
-            navbarState={navBarOpen} 
-          />
+          <BurgerMenu open={open} handleClick={handleClick }/>
         </FlexContainer>
       </StyledNavBar>
-      <CollapseMenu 
-        navbarState={navBarOpen} 
-      />
+      <CollapseMenu open={open} handleClick={handleClick }/>
     </>
   
   );

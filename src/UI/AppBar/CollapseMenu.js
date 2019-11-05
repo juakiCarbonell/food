@@ -1,21 +1,34 @@
 import React from 'react';
 import styled from 'styled-components';
+import { color } from 'styled-system';
+import {useSpring, animated, interpolate} from 'react-spring'
 
-const StyledCollapseMenu = styled.div`
-  background: #2d3436;
-  position: fixed;
-  top: 5rem;
-  left: 0;
+const StyledCollapseMenu = styled(animated.div)`
+  position: absolute;
+  top: 0;
   right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100vh;
+  background-color: red;
+  text-align: right;
+  padding: 3rem;
+  width: 40%;
+  transform: ${( props ) => props.open ? 'translateX(0)' : 'translateX(100%)'};
+
+  @media (min-width: 769px) {
+    display: none;
+  }
 `
 
 const NavLinks = styled.ul`
   list-style-type: none;
-  padding: 2rem 1rem 2rem 2rem;
+  padding: 1rem;
   
-  & li {
+  /* & li {
     transition: all 300ms linear 0s;
-  }
+  } */
   & a {
     font-size: 1.4rem;
     line-height: 2;
@@ -28,22 +41,22 @@ const NavLinks = styled.ul`
       border-bottom: 1px solid #fdcb6e;
     }
   }
+  @media (min-width: 769px) {
+    display: none;
+  }
 `;
 
 
 const CollapseMenu = (props) => {
-  if (props.navbarState === true) {
-    return (
-      <StyledCollapseMenu>
-        <NavLinks>
-          <li><a href="/" onClick={props.handleNavbar}>link n1</a></li>
-          <li><a href="/" onClick={props.handleNavbar}>link n2</a></li>
-          <li><a href="/" onClick={props.handleNavbar}>link n3</a></li>
-        </NavLinks>
-      </StyledCollapseMenu>
-    );
-  }
-  return null;
+  return (
+    <StyledCollapseMenu {...props}>
+      <NavLinks>
+        <li><a href="/">link n1</a></li>
+        <li><a href="/">link n2</a></li>
+        <li><a href="/">link n3</a></li>
+      </NavLinks>
+    </StyledCollapseMenu>
+  );
   
 };
 

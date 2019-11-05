@@ -12,7 +12,7 @@ const App = (props) => {
   return (
     <ThemeProvider theme={theme}>
       {props.children}
-      <NavBar />
+      <NavBar bg="grey"/>
       {/* <Video /> */}
       {/* <CardContainer justifyContent='space-around'/> */}
       

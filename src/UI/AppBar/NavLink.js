@@ -1,13 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
+import { color } from 'styled-system';
+
 
 const StyledNavLink = styled.li`
   & a {
     padding: 1rem;
     outline: 1px solid red;
     text-decoration: none;
-    color: black;
+    ${color}
+    text-transform: uppercase;
     cursor: pointer;
+    ${color}
     &:hover {
       text-decoration: none;
       color: red
@@ -15,10 +19,10 @@ const StyledNavLink = styled.li`
   }
 `
 
-const NavLink = ({text}) => {
+const NavLink = (props) => {
   return (
-    <StyledNavLink>
-      <a href="/">{text}</a>
+    <StyledNavLink {...props}>
+      <a href="/">{props.text}</a>
     </StyledNavLink>
   );
 };
