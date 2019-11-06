@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
+import {useSpring, animated, interpolate} from 'react-spring'
 
 
 const StyledBurgerMenu = styled.button`
@@ -14,46 +15,54 @@ const StyledBurgerMenu = styled.button`
   padding: 0;
   border: none;
   cursor: pointer;
-
-  div {
-    :first-child {
-      transform: ${props => props.open ? 'rotate(45deg) scaleX(1.2) translate(2px, -9px)' : 'rotate(0)'};
-      transform-origin: top left;
-    }
-    :nth-child(2) {
-      opacity: ${props => props.open ? '0' : '1'};
-    }
-    :nth-child(3) {
-      transform: ${props => props.open ? 'rotate(-45deg) scaleX(1.2) translate(1px, 9px)' : 'rotate(0)'};
-      transform-origin: bottom left;
-      /* transform-origin: center left; */
-    }
-  }
-
-
-  @media (min-width: 769px) {
-    display: none;
-  }
-  
 `
 
 
-const Lines = styled.div`
+const Lines = styled(animated.div)`
   width: 4rem;
   height: 0.5rem;
   background-color: black;
   /* border-radius: 10px; */
-  /* transform-origin: 0% 50%; */
-  /* transition: all 0.3s linear; */
+  /* transform-origin: 0% 50%;
+  transition: transform 1s ease-in-out; */
 `
 
 const BurgerMenu = (props) => {
   console.log(props)
+  const {rot, trans} = useSpring({
+    from: { rot: props.open ? 0 : 45, trans: props.open ? 0 : 15},
+    rot: props.open ? 45 : 0,
+    trans: props.open ? 15 : 0,
+    config: { duration: 1000 }
+  })
+  const {rot1, trans1} = useSpring({
+    from: { rot1: props.open ? 0 : -45, trans1: props.open ? 0 : 15},
+    rot1: props.open ? -45 : 0,
+    trans1: props.open ? 15 : 0,
+    config: { duration: 1000 }
+  })
+
+
+  const { x2 } = useSpring({ from: { x2: props.open ? 1 : 0 }, x2: props.open ? 0 : 1, config: { duration: 1000 } })
+  
+
+
   return (
     <StyledBurgerMenu onClick={props.handleClick} {...props}>
-      <Lines />
-      <Lines />
-      <Lines />
+      <Lines 
+        style={{
+          transform: interpolate([rot1, trans1], (rot1, trans1) => `rotate(${rot1}deg) translate(-${trans1}px, ${trans1}px)`)
+        }}
+      
+      />
+      <Lines style={{
+        opacity: x2.interpolate({ range: [0, 1], output: [0, 1] })
+      }}/>
+      <Lines
+        style={{
+          transform: interpolate([rot, trans], (rot, trans) => `rotate(${rot}deg) translate(-${trans}px, -${trans}px)`)
+        }}
+      />
     </StyledBurgerMenu>
     );
 };
