@@ -15,7 +15,7 @@ const StyledCollapseMenu = styled(animated.div)`
   text-align: right;
   padding: 3rem;
   width: 40%;
-  transform: ${( props ) => props.open ? 'translateX(0)' : 'translateX(100%)'};
+  /* transform: ${( props ) => props.open ? 'translateX(0%)' : 'translateX(100%)'}; */
 
   @media (min-width: 769px) {
     display: none;
@@ -41,15 +41,28 @@ const NavLinks = styled.ul`
       border-bottom: 1px solid #fdcb6e;
     }
   }
-  @media (min-width: 769px) {
+  /* @media (min-width: 769px) {
     display: none;
-  }
+  } */
 `;
 
 
 const CollapseMenu = (props) => {
+  
+  const { open } = useSpring({ open: props.open ? 0 : 1 });
+
+
   return (
-    <StyledCollapseMenu {...props}>
+    <StyledCollapseMenu 
+      {...props}
+      style={{
+        transform: open.interpolate({
+          range: [0, 0.2, 0.3, 1],
+          output: [0, 20, 0, 200],
+        }).interpolate(openValue => `translate3d(${openValue}%, 0, 0`),
+      }}
+    
+      >
       <NavLinks>
         <li><a href="/">link n1</a></li>
         <li><a href="/">link n2</a></li>

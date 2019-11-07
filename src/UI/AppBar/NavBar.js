@@ -12,7 +12,7 @@ const NavBar = (props)  => {
 
   const [open, setOpen] = useState(false);
 
-  const handleClick = () => {
+  const handleclick = () => {
     console.log("handleClick")
     setOpen(!open)
   }
@@ -36,17 +36,28 @@ const NavBar = (props)  => {
     align-items: center;
   `;
 
-
+  const barAnimation = useSpring({
+    from: { transform: 'translate3d(0, -10rem, 0)' },
+    transform: 'translate3d(0, 0, 0)',
+  });
+  // const barAnimation = useSpring({
+  //   from: { transform: 'translate3d(0, -10rem, 0)' },
+  //   transform: 'translate3d(0, 0, 0)',
+  //   delay: 1000
+  // });
   return (
     <>
-      <StyledNavBar {...props}>
+      <StyledNavBar 
+        {...props} 
+        style={barAnimation}
+      >
         <FlexContainer>
           <Brand />
           <NavLinks />
-          <BurgerMenu open={open} handleClick={handleClick }/>
+          <BurgerMenu open={open} setOpen={setOpen}/>
         </FlexContainer>
       </StyledNavBar>
-      <CollapseMenu open={open} handleClick={handleClick }/>
+      <CollapseMenu open={open} setOpen={setOpen}/>
     </>
   
   );
