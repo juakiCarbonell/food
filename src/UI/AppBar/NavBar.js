@@ -12,7 +12,7 @@ const NavBar = (props)  => {
 
   const [open, setOpen] = useState(false);
 
-  const handleclick = () => {
+  const handleClick = () => {
     console.log("handleClick")
     setOpen(!open)
   }
@@ -54,10 +54,10 @@ const NavBar = (props)  => {
         <FlexContainer>
           <Brand />
           <NavLinks />
-          <BurgerMenu open={open} setOpen={setOpen}/>
+          <BurgerMenu open={open} handleClick={handleClick}/>
         </FlexContainer>
       </StyledNavBar>
-      <CollapseMenu open={open} setOpen={setOpen}/>
+      <CollapseMenu open={open} handleClick={handleClick}/>
     </>
   
   );

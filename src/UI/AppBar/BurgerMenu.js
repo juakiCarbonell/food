@@ -31,7 +31,6 @@ const Lines = styled(animated.div)`
 `
 
 const BurgerMenu = (props) => {
-
   const {rot1, trans1} = useSpring({
     from: { rot1: props.open ? 0 : 45, trans1: props.open ? 0 : 15},
     rot1: props.open ? 45 : 0,
@@ -50,7 +49,7 @@ const BurgerMenu = (props) => {
   
   return (
     
-    <StyledBurgerMenu onClick={() => props.setOpen(!props.open)} {...props}>
+    <StyledBurgerMenu onClick={props.handleClick} {...props}>
       <Lines 
         style={{
           transform: interpolate([rot1, trans1], (rot1, trans1) => `rotate(${rot1}deg) translate(${trans1}px, ${trans1}px)`)
