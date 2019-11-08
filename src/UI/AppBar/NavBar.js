@@ -22,12 +22,12 @@ const NavBar = (props)  => {
     top: 0;
     left: 0;
     ${color}
-    z-index: 2;
+    z-index: 10;
   `;
 
   const FlexContainer = styled.div`
     display: flex;
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
     display: flex;
     /* padding: 0 2rem; */
@@ -40,11 +40,7 @@ const NavBar = (props)  => {
     from: { transform: 'translate3d(0, -10rem, 0)' },
     transform: 'translate3d(0, 0, 0)',
   });
-  // const barAnimation = useSpring({
-  //   from: { transform: 'translate3d(0, -10rem, 0)' },
-  //   transform: 'translate3d(0, 0, 0)',
-  //   delay: 1000
-  // });
+
   return (
     <>
       <StyledNavBar 

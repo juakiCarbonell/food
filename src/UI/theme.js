@@ -6,7 +6,8 @@ const blue = "#0091ff";
 const grey = "#AAA";
 const green = "#83be58";
 const white = "#FFF";
-
+const black = "#000";
+const darkReed = "#8B0000"
 
 export default {
   name: "default",
@@ -26,7 +27,9 @@ export default {
     blue,
     grey,
     green,
-    white
+    white,
+    black,
+    darkReed
   },
   buttons: {
     primary: {

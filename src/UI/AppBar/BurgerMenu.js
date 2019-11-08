@@ -9,22 +9,21 @@ const StyledBurgerMenu = styled.button`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 4rem;
-  height: 4rem;
-  outline: 1px solid red;
+  width: 50px;
+  height: 50px;
   padding: 0;
   border: none;
   background: transparent;
   cursor: pointer;
 
-  @media (min-width: 769px) {
+  /* @media (min-width: 769px) {
     display: none;
-  }
+  } */
 `
 
 
 const Lines = styled(animated.div)`
-  width: 4rem;
+  width: 50px;
   height: 0.5rem;
   background-color: black;
   border-radius: 10px;
@@ -32,9 +31,9 @@ const Lines = styled(animated.div)`
 
 const BurgerMenu = (props) => {
   const {rot1, trans1} = useSpring({
-    from: { rot1: props.open ? 0 : 45, trans1: props.open ? 0 : 15},
+    from: { rot1: props.open ? 0 : 45, trans1: props.open ? 0 : 10},
     rot1: props.open ? 45 : 0,
-    trans1: props.open ? 15 : 0,
+    trans1: props.open ? 10 : 0,
     config: { duration: 500 }
   })
 

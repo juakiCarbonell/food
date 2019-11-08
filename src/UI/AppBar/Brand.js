@@ -1,23 +1,31 @@
 import React from 'react';
 import styled from "styled-components";
-import logo from '../../multimedia/images/bmw.png';
+import logo from '../../multimedia/images/logo.png';
 
 const Brand = () => {
 
   const StyledImage = styled.div`
-    height: 85%;
+    height: 66%;
+    /* width: 100%; */
+    display: flex;
+    align-items: center;
     img {
-      height: 100%;
+      height: 66%;
       width: auto;
     }
-`;
-//   const Image = styled.img`
-//   
-// `;
+  `;
+
+  
+  const BrandName = styled.h1`
+    font-family: 'Pacifico', cursive;
+    font-size: 2rem;
+    padding-left: 10px;
+  `
 
   return (
     <StyledImage>
       <img src={logo} alt="whatever"/>
+      <BrandName>Luis Titos</BrandName>
     </StyledImage>
   );
 };
