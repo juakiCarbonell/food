@@ -1,32 +1,26 @@
 import React from 'react';
-import styled from "styled-components";
-import logo from '../../multimedia/images/logo.png';
+import styled from 'styled-components';
 
-const Brand = () => {
+const BrandContainer = styled.div`
+  display: flex;
+  align-items: center;
+  /* height: 90%; */
+  outline: 1px solid white;
+`
+const Image = styled.img`
+  height: 66%;
+`
 
-  const StyledImage = styled.div`
-    height: 66%;
-    /* width: 100%; */
-    display: flex;
-    align-items: center;
-    img {
-      height: 66%;
-      width: auto;
-    }
-  `;
+const BrandName = styled.div`
+  font-size: 1rem;
+`
 
-  
-  const BrandName = styled.h1`
-    font-family: 'Pacifico', cursive;
-    font-size: 2rem;
-    padding-left: 10px;
-  `
-
+const Brand = ({logo}) => {
   return (
-    <StyledImage>
-      <img src={logo} alt="whatever"/>
+    <BrandContainer>
+      <Image src={logo}/>
       <BrandName>Luis Titos</BrandName>
-    </StyledImage>
+    </BrandContainer>
   );
 };
 
