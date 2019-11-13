@@ -11,9 +11,10 @@ const NavBarContainer = styled.nav`
   background-color: red;
   z-index: 5;
 `
-const FlexBox = styled.nav`
+const FlexBox = styled.div`
   width: 90%;
   display: flex;
+  align-items: center;
   margin: 0 auto;
   justify-content: space-between;
   height: 5rem;

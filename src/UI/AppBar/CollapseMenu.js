@@ -10,6 +10,8 @@ const CollapseWrapper = styled.div`
   left: 0;
   right: 0;
   z-index: 3;
+  /* transform: ${({ open }) => open ? 'translateX(40%)' : 'translateX(0%)'};
+  transition: transform 0.3s ease-in-out; */
 `;
 
 const NavLinks = styled.ul`
@@ -37,7 +39,7 @@ const NavLinks = styled.ul`
 const CollapseMenu = (props) => { 
   if(props.open){
     return (
-      <CollapseWrapper>
+      <CollapseWrapper {...props}>
         <NavLinks>
           <li><a href="/">link n1</a></li>
           <li><a href="/">link n2</a></li>

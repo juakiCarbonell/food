@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const BrandContainer = styled.div`
   display: flex;
   align-items: center;
-  /* height: 90%; */
+  height: 90%;
   outline: 1px solid white;
 `
 const Image = styled.img`
