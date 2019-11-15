@@ -1,18 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
+import { setFont} from '../styles';
 
 const BrandContainer = styled.div`
   display: flex;
   align-items: center;
   height: 90%;
-  outline: 1px solid white;
 `
 const Image = styled.img`
-  height: 66%;
+  height: 55%;
+  
 `
 
 const BrandName = styled.div`
-  font-size: 1rem;
+  font-size: 1.5rem;
+  ${setFont.secondary}
+  margin-left: 10px;
 `
 
 const Brand = ({logo}) => {

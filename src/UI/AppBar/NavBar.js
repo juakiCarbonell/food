@@ -3,12 +3,13 @@ import styled from 'styled-components';
 import Brand from './Brand';
 import Burger from './Burger';
 import CollapseMenu from './CollapseMenu';
-import logo from '../../multimedia/images/logo.png'
+import logo from '../../multimedia/images/logo.png';
+import { setColor} from '../styles';
 
 const NavBarContainer = styled.nav`
   position: fixed;
   width: 100%;
-  background-color: red;
+  background-color: ${setColor.darkRed};
   z-index: 5;
 `
 const FlexBox = styled.div`

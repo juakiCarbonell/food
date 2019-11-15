@@ -1,17 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import { setColor} from '../styles';
 
 
 const CollapseWrapper = styled.div`
-  background: #2d3436;
+  background: ${setColor.darkRed};
   position: fixed;
   top: 4.5rem;
-  left: 0;
   right: 0;
   z-index: 3;
-  /* transform: ${({ open }) => open ? 'translateX(40%)' : 'translateX(0%)'};
-  transition: transform 0.3s ease-in-out; */
+  height: 100vh;
+  width: 45vw;
+  transform: ${({ open }) => open ? 'translateX(0%)' : 'translateX(100%)'};
+  transition: transform 1s linear;
 `;
 
 const NavLinks = styled.ul`

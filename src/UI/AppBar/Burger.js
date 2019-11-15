@@ -1,35 +1,36 @@
 import React from 'react';
 import styled from 'styled-components';
+import { setColor} from '../styles';
 
 const Wrapper = styled.div`
-  width: 49px;
-  height: 49px;
+  width: 40px;
+  height: 35px;
   cursor: pointer;
-  border: 1px solid white;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  background-color: ${setColor.darkRed};
   
   div {
     transition: all 0.3s linear;
     
     :first-child {
       transform-origin: 0 100%;
-      transform: ${({ open }) => open ? 'rotate(45deg) translate(5px, -1px)' : 'rotate(0)'};
+      transform: ${({ open }) => open ? 'rotate(45deg) translate(1px, -3px)' : 'rotate(0)'};
     }
     :nth-child(2) {
       opacity: ${({ open }) => open ? '0' : '1'};
     }
     :last-child {
       transform-origin: 0% 0%;
-      transform: ${({ open }) => open ? 'rotate(-45deg) translate(7px, 1px)' : 'rotate(0)'};
+      transform: ${({ open }) => open ? 'rotate(-45deg) translate(5px, 0px)' : 'rotate(0)'};
     }
   }
 `
 const Linie = styled.div`
-  width: 50px;
+  width: 40px;
   height: 5px;
-  background-color: white;
+  background-color: ${setColor.black};
 `
 
 const Burger = (props) => {
