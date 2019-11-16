@@ -1,35 +1,27 @@
 import React from 'react';
 import styled from 'styled-components';
-import { color } from 'styled-system';
-import {useSpring, animated, interpolate} from 'react-spring'
+import { setColor} from '../styles';
 
-const StyledCollapseMenu = styled(animated.div)`
-  position: absolute;
-  top: 0;
+
+const CollapseWrapper = styled.div`
+  background: ${setColor.darkRed};
+  position: fixed;
+  top: 4.5rem;
   right: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  z-index: 3;
   height: 100vh;
-  background-color: #8B0000;
-  text-align: right;
-  padding: 3rem;
-  width: 40%;
-  z-index: 5;
-  /* transform: ${( props ) => props.open ? 'translateX(0%)' : 'translateX(100%)'}; */
-
-  /* @media (min-width: 769px) {
-    display: none;
-  } */
-`
+  width: 45vw;
+  transform: ${({ open }) => open ? 'translateX(0%)' : 'translateX(100%)'};
+  transition: transform 1s linear;
+`;
 
 const NavLinks = styled.ul`
   list-style-type: none;
-  padding: 1rem;
+  padding: 2rem 1rem 2rem 2rem;
   
-  /* & li {
+  & li {
     transition: all 300ms linear 0s;
-  } */
+  }
   & a {
     font-size: 1.4rem;
     line-height: 2;
@@ -45,31 +37,22 @@ const NavLinks = styled.ul`
 `;
 
 
-const CollapseMenu = (props) => {
-  
-  const { open } = useSpring({ open: props.open ? 0 : 1 });
+const CollapseMenu = (props) => { 
+  if(props.open){
+    return (
+      <CollapseWrapper {...props}>
+        <NavLinks>
+          <li><a href="/">link n1</a></li>
+          <li><a href="/">link n2</a></li>
+          <li><a href="/">link n3</a></li>
+          <li><a href="/">link n4</a></li>
+        </NavLinks>
+        
+      </CollapseWrapper>
+    );
 
-
-  return (
-    <StyledCollapseMenu 
-      {...props}
-      style={{
-        transform: open.interpolate({
-          range: [0, 0.2, 0.3, 1],
-          output: [0, 20, 0, 200],
-        }).interpolate(openValue => {
-          console.log('open', openValue)
-          return `translate3d(${openValue}%, 0, 0`
-        }),
-      }}
-    >
-      <NavLinks>
-        <li><a href="/">link n1</a></li>
-        <li><a href="/">link n2</a></li>
-        <li><a href="/">link n3</a></li>
-      </NavLinks>
-    </StyledCollapseMenu>
-  );
+  }
+  return null;
   
 };
 
