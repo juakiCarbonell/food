@@ -2,7 +2,7 @@ import React from 'react';
 import NavBar from '../UI/AppBar/NavBar';
 import CardContainer from '../UI/CardContainer';
 import Video from './Video';
-import Jumbotron from '../UI/Jumbotron';
+import Jumbotron from '../UI/Jumbotron/Jumbotron';
 import GlobalStyles from '../UI/GlobalStyles'
 
 import { ThemeProvider } from 'styled-components'
