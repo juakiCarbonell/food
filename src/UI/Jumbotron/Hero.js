@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {setFlex, setBackground} from '../styles'
+import {setFlex, setBackground} from '../styles';
 
 
 const Hero = styled.div`

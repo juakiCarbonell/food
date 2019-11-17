@@ -27,3 +27,7 @@ export const setMediaQuery = {
   tablet: 768,
   phone: 576
 }
+
+export const setTransition = ({property="all", time="0.3s", timing="ease-in-out"}) => {
+  return `transition: ${property} ${time} ${timing} `
+}
