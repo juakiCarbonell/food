@@ -2,7 +2,8 @@ import React from 'react';
 import NavBar from '../UI/AppBar/NavBar';
 import CardContainer from '../UI/CardContainer';
 import Video from './Video';
-import Jumbotron from '../UI/Jumbotron';
+import Jumbotron from '../UI/Jumbotron/Jumbotron';
+import About from '../UI/About/About';
 import GlobalStyles from '../UI/GlobalStyles'
 
 import { ThemeProvider } from 'styled-components'
@@ -17,6 +18,7 @@ const App = (props) => {
         <GlobalStyles/>
         <NavBar bg="darkReed"/>
         <Jumbotron />
+        <About />
         {/* <Video /> */}
         {/* <CardContainer justifyContent='space-around'/> */}
       </ThemeProvider>
