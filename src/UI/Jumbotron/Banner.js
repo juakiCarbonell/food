@@ -40,9 +40,6 @@ const BannerWrapper = styled.div`
     margin: 0 auto;
     ${fadeIn('-100%', '10%', '0%')}
   }
-  /* @media (min-width: 768px){
-    width: 70vw;
-  } */
 `
 
 const Banner = ({title, text, children}) => {
