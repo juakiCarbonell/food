@@ -21,9 +21,13 @@ export const PrimaryBtn = styled.button`
   
   &:hover {
     background: transparent;
-    color: ${setColor.white};
+    /* color: ${setColor.white}; */
   }
 `
 
 
 export default PrimaryBtn;
+
+export const SmallBtn = styled(PrimaryBtn)`
+  padding: 0.5rem;
+`

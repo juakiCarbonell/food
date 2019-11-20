@@ -24,13 +24,18 @@ const AboutCenter = styled.div`
       letter-spacing: 3px;
     }
   }
-  @media (min-width: 992px){
+  @media (min-width: 1200px){
     width: 100vw;
+    .about-info,
+    .about-img {
+      padding: 0rem;
+    }
     max-width: 1170px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 2rem;
-    .about-img {
+    .about-img,
+    .about-info {
       align-self: center;
     }
     .about-info {
