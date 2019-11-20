@@ -4,6 +4,7 @@ import CardContainer from '../UI/CardContainer';
 import Video from './Video';
 import Jumbotron from '../UI/Jumbotron/Jumbotron';
 import About from '../UI/About/About';
+import Paellas from '../UI/Paellas'
 import GlobalStyles from '../UI/GlobalStyles'
 
 import { ThemeProvider } from 'styled-components'
@@ -19,6 +20,7 @@ const App = (props) => {
         <NavBar bg="darkReed"/>
         <Jumbotron />
         <About />
+        <Paellas />
         {/* <Video /> */}
         {/* <CardContainer justifyContent='space-around'/> */}
       </ThemeProvider>
