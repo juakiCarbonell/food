@@ -4,6 +4,7 @@ import styled from "styled-components";
 import {setColor, setFont, setTransition, setShadow} from "./styles";
 import PropsTypes from 'prop-types';
 
+
 const StyledPaella = styled.article`
   background: ${setColor.white};
   margin: 2rem 0;
@@ -60,7 +61,7 @@ const Paella = ({paella}) => {
       <div className="paella-info">
         <h4>{title}</h4>
         <p>{info}</p>
-        <SmallBtn>Hello</SmallBtn>
+        <SmallBtn>See Details</SmallBtn>
       </div>
     </StyledPaella >
   );

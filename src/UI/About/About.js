@@ -55,7 +55,7 @@ const About = () => {
           <img src={AboutImage} alt="Sobre mi"/>
         </div>
         <div className="about-info">
-          <Title title="Sobre mi" center></Title>
+          <Title title="About Me" center></Title>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur nulla, nisi officiis delectus voluptatum inventore ab sapiente architecto magni aperiam ut dicta vero qui similique ea harum aliquam recusandae neque.
           </p>

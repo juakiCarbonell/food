@@ -1,17 +1,16 @@
-import React from 'react';
-import img from '../multimedia/images/logo.png';
-
 import styled from "styled-components";
+import {setBackground} from './styles';
+import img from '../multimedia/images/chef.jpg'
 
-const StyledImage = styled.img`
-  width: 100%
+const Image = styled.div`
+  min-height: 50vh;
+  width: auto;
+  ${props => setBackground({img:props.img, color:"rgba(0,0,0,0)"})};
+  /* background-image: url(${img}); */
+  background-image: ${props => `url(${props.img})`};
+  background-repeat: no-repeat;
+  background-size: cover;
 `
 
-
-const Image = () => {
-  return (
-    <StyledImage src={img} alt="Paella"/>
-  );
-};
 
 export default Image;

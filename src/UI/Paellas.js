@@ -4,11 +4,12 @@ import styled from "styled-components";
 import Title from './Title';
 import Section from './Section';
 import foodData from '../foodData/foodData';
-import {setColor, setFont, setTransition} from "./styles"
+import {setColor, setFont, setTransition} from "./styles";
+import PrimaryBtn from './Buttons';
 
 
 const PaellaCenter = styled.div`
-  width: 90vw;
+  width: 75vw;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(360px,1fr));
@@ -27,17 +28,27 @@ const PaellaCenter = styled.div`
   } */
 `
 
+const ButtonContainer = styled.div`
+  width: 75vw;
+  margin: 0 auto;
+`
+
 const Paellas = () => {
 
   const [paellas, setPaellas] = useState(foodData);
   return (
     <Section color={setColor.grey}>
-      <Title title="Menu" center />
+      <Title title="My Specialities" center />
       <PaellaCenter>
         {paellas.map((paella)=> {
           return <Paella key={paella.id} paella={paella} />
         })}
-      </PaellaCenter>
+        
+        </PaellaCenter>
+        <ButtonContainer>
+          <PrimaryBtn>All Paellas</PrimaryBtn>
+        </ButtonContainer>
+      
     </Section>
   );
 };
