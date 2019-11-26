@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import NavLink from './NavLink';
+import NavLinkItem from './NavLink';
 
 
 const StyledNavLinks = styled.ul`
@@ -17,9 +17,11 @@ const NavLinks = (props) => {
 
   return (
     <StyledNavLinks {...props}>
-      <NavLink text="Link 1" color="white"/>
-      <NavLink text="Link 2" color="white"/>
-      <NavLink text="Link 3" color="white"/>
+      <NavLinkItem text="Home" color="white" route="/"/>
+      <NavLinkItem text="How it works" color="white" route="/"/>
+      <NavLinkItem text="Menu" color="white" route="/"/>
+      <NavLinkItem text="About" color="white" route="/about"/>
+      <NavLinkItem text="Contact" color="white" route="/"/>
     </StyledNavLinks>
   );
 };

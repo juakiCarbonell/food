@@ -61,7 +61,7 @@ const Paella = ({paella}) => {
       <div className="paella-info">
         <h4>{title}</h4>
         <p>{info}</p>
-        <SmallBtn>See Details</SmallBtn>
+        {/*<SmallBtn>See Details</SmallBtn>*/}
       </div>
     </StyledPaella >
   );

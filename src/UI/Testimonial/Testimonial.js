@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Section from '../Section';
-import imgTestimonial from '../../multimedia/images/testimonial.png';
-import quotation from '../../multimedia/images/quotation.png';
+import {setColor} from '../styles';
+import TestimonialItem from './TestimonialItem'
 
 
 import React from 'react';
@@ -42,29 +42,13 @@ const TestimonialCenter = styled.div`
       margin-bottom: 0px;
     }
   }
-
 `
 
 const Testimonial = () => {
   return (
-    <Section>
+    <Section color={setColor.grey}>
       <TestimonialCenter>
-        <div className="testimonial-quotes">
-          <img src={quotation} alt="quotes"/>
-        </div>
-        <div className="testimonial-text">
-          <p className="qoute">There are many variations of passages of Lorem Ipsum available, but the majority</p>
-        </div>
-        
-        <div className="testimonial-img">
-          <img src={imgTestimonial} alt="Sobre mi"/>
-        </div>
-        <div className="testimonial-info">
-          <p className="name">Emma Johnson,</p>
-          <p>Berlin</p>
-        </div>
-
-      
+        <TestimonialItem />      
       </TestimonialCenter>
       
     </Section>

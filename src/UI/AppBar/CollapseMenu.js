@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { setColor} from '../styles';
+import {Link} from 'react-router-dom';
 
 
 const CollapseWrapper = styled.div`
@@ -42,10 +43,12 @@ const CollapseMenu = (props) => {
     return (
       <CollapseWrapper {...props}>
         <NavLinks>
-          <li><a href="/">link n1</a></li>
-          <li><a href="/">link n2</a></li>
-          <li><a href="/">link n3</a></li>
-          <li><a href="/">link n4</a></li>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/">How it Works</Link></li>
+          <li><Link to="/">Menu</Link></li>
+          <li><Link to="/about">About Me</Link></li>
+          <li><Link to="/">Contact</Link></li>
+          
         </NavLinks>
         
       </CollapseWrapper>
