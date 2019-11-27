@@ -14,7 +14,7 @@ const StyledSteps = styled.div `
   flex-direction: column;
   align-items: center;
   p {
-    margin: 0px;
+    margin: 1rem;
   }
   .step {
     display: flex;
@@ -22,10 +22,6 @@ const StyledSteps = styled.div `
     align-items: center;
     justify-content: space-evenly;
     margin: 0 auto;
-    width: 200px;
-    height: 200px;
-    border: 1px solid ${setColor.grey};
-    padding: 2rem;
     border-radius: 50%;
   }
   .step-icon {
@@ -36,11 +32,12 @@ const StyledSteps = styled.div `
     height: 3rem;
   }
 
-  @media (min-width: 768px){
+  @media (min-width: 576px){
     flex-direction: row;
     justify-content: space-around;
     .step {
       margin: 0;
+      text-align: center;
     }
     .step-separator {
       border-top: 6px solid ${setColor.grey};

@@ -31,6 +31,10 @@ const PaellaCenter = styled.div`
 const ButtonContainer = styled.div`
   width: 75vw;
   margin: 0 auto;
+  @media (min-width: 1200px) {
+    width: 100vw;
+    max-width: 1170px;
+  }
 `
 
 const Paellas = () => {

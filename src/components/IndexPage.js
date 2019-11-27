@@ -10,9 +10,15 @@ import Contact from '../UI/ContactForm/Contact';
 import coockingImg from '../multimedia/images/coocking.jpg';
 import cheersImg from '../multimedia/images/cheers.jpg';
 import Follow from '../UI/Follow';
-import HowItWorks from '../UI/HowItWorks/HowItWorks'
+import HowItWorks from '../UI/HowItWorks/HowItWorks';
+import ContactIndex from '../UI/ContactForm/ContactIndex';
+import { useMediaQuery } from 'react-responsive'
 
 const IndexPage = () => {
+  const isDesktopOrLaptop = useMediaQuery({
+    query: '(min-device-width: 768px)'
+  })
+
   return (
     <>
       <Jumbotron />
@@ -21,7 +27,7 @@ const IndexPage = () => {
       <About />
       <Testimonial />
       <Image img={coockingImg}/>
-      <Contact />
+      { isDesktopOrLaptop ? <ContactIndex /> : <Contact />}
       <Image img={cheersImg}/>
       <Follow />
     </>
