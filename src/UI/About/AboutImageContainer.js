@@ -1,5 +1,4 @@
 import React from 'react';
-import AboutImage from '../../multimedia/images/chef.jpg';
 import styled from "styled-components";
 
 const StyledContainer = styled.div`
@@ -14,10 +13,10 @@ const StyledContainer = styled.div`
   }
 `
 
-const AboutImageContainer = () => {
+const AboutImageContainer = ({img}) => {
   return (
     <StyledContainer >
-      <img src={AboutImage} alt="Sobre mi"/>
+      <img src={img} alt="Sobre mi"/>
     </StyledContainer >
   );
 };

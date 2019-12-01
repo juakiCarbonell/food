@@ -12,7 +12,7 @@ import cheersImg from '../multimedia/images/cheers.jpg';
 import Follow from '../UI/Follow';
 import HowItWorks from '../UI/HowItWorks/HowItWorks';
 import ContactIndex from '../UI/ContactForm/ContactIndex';
-import { useMediaQuery } from 'react-responsive'
+import { useMediaQuery } from 'react-responsive';
 
 const IndexPage = () => {
   const isDesktopOrLaptop = useMediaQuery({
