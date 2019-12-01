@@ -3,21 +3,13 @@ import Section from '../Section';
 import React from 'react';
 import Title from '../Title';
 import AboutImage from '../../multimedia/images/chef.jpg';
-import {setColor} from '../styles';
 import PrimaryBtn from '../Buttons';
 
 const AboutCenter = styled.div`
   width: 90vw;
   margin: 0 auto;
-  .about-info,
-  .about-img {
+  .about-info{
     padding: 1.5rem;
-  }
-  .about-img {
-    img {
-      width: 100%;
-      display: block;
-    }
   }
   .about-info {
     p {
