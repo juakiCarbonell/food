@@ -7,13 +7,12 @@ import ingredientsImage from '../multimedia/images/about_ingredients.jpg';
 import ImageContainer from '../UI/About/AboutImageContainer';
 import TextContainer from '../UI/About/AboutTextContainer';
 import { useMediaQuery } from 'react-responsive';
+import {setColor} from '../UI/styles';
 
-const AboutCenter = styled.div`
+const AboutCenterTop = styled.div`
   width: 90vw;
-  margin: 6rem auto 0;
+  margin: 6rem auto 2rem;
   .about-section {
-    /* padding: 1rem;
-    margin: 2rem; */
     margin-bottom: 3rem;
   }
 
@@ -22,11 +21,16 @@ const AboutCenter = styled.div`
     margin-top: 6rem;
     max-width: 1170px;
     width: 100vw;
-    .about-section {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-column-gap: 2rem;
-    }
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 2rem;
+  }
+`
+
+const AboutCenter = styled(AboutCenterTop)`
+  margin: 2rem auto;
+  @media (min-width: 1200px){
+    margin-top: 2rem;
   }
 `
 
@@ -38,30 +42,31 @@ const AboutPage = () => {
   })
 
   return (
-    <Section>
-      <AboutCenter>
-        <div className="about-section">
-        {isDesktopOrLaptop ? 
-          <>
-            <ImageContainer img={aboutImage } />
-            <TextContainer 
-              title="About Me"
-              text = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur nulla, nisi officiis delectus voluptatum inventore ab sapiente architecto magni aperiam ut dicta vero qui similique ea harum aliquam recusandae neque."
-            />
-          </>
-          :
-          <>
-            <TextContainer 
-              title="About Me"
-              text = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur nulla, nisi officiis delectus voluptatum inventore ab sapiente architecto magni aperiam ut dicta vero qui similique ea harum aliquam recusandae neque."
-            />
-            <ImageContainer img={aboutImage } />
-          </>
-        
-        }
+    <>
+      <Section>
+        <AboutCenterTop>
+          {isDesktopOrLaptop ? 
+            <>
+              <ImageContainer img={aboutImage } />
+              <TextContainer 
+                title="About Me"
+                text = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur nulla, nisi officiis delectus voluptatum inventore ab sapiente architecto magni aperiam ut dicta vero qui similique ea harum aliquam recusandae neque."
+              />
+            </>
+            :
+            <>
+              <TextContainer 
+                title="About Me"
+                text = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur nulla, nisi officiis delectus voluptatum inventore ab sapiente architecto magni aperiam ut dicta vero qui similique ea harum aliquam recusandae neque."
+              />
+              <ImageContainer img={aboutImage } />
+            </>
           
-        </div>
-        <div className="about-section">
+          }
+        </AboutCenterTop>
+      </Section>
+      <Section color={setColor.grey}>
+        <AboutCenter>
           {isDesktopOrLaptop ?
             <>
               <TextContainer 
@@ -79,33 +84,30 @@ const AboutPage = () => {
               <ImageContainer img={cookingImage} />
             </>
           }
-          
-
-
-        </div>
-        <div className="about-section">
-        {isDesktopOrLaptop ? 
-          <>
-            <ImageContainer img={ingredientsImage} />
-            <TextContainer 
-              title="The products I use"
-              text = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur nulla, nisi officiis delectus voluptatum inventore ab sapiente architecto magni aperiam ut dicta vero qui similique ea harum aliquam recusandae neque."
-            />
-          </>
-          :
-          <>
-            <TextContainer 
-              title="The products I use"
-              text = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur nulla, nisi officiis delectus voluptatum inventore ab sapiente architecto magni aperiam ut dicta vero qui similique ea harum aliquam recusandae neque."
-            />
-            <ImageContainer img={ingredientsImage} />
-          </>
-        }
-          
-        </div>
-        
-      </AboutCenter>
-    </Section>
+        </AboutCenter>
+      </Section>
+      <Section>
+        <AboutCenter>
+          {isDesktopOrLaptop ? 
+            <>
+              <ImageContainer img={ingredientsImage} />
+              <TextContainer 
+                title="The products I use"
+                text = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur nulla, nisi officiis delectus voluptatum inventore ab sapiente architecto magni aperiam ut dicta vero qui similique ea harum aliquam recusandae neque."
+              />
+            </>
+            :
+            <>
+              <TextContainer 
+                title="The products I use"
+                text = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur nulla, nisi officiis delectus voluptatum inventore ab sapiente architecto magni aperiam ut dicta vero qui similique ea harum aliquam recusandae neque."
+              />
+              <ImageContainer img={ingredientsImage} />
+            </>
+          }
+        </AboutCenter>
+      </Section>
+    </>
   );
 };
 
