@@ -1,11 +1,12 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMobileAlt, faCalendarAlt, faUtensils } from '@fortawesome/free-solid-svg-icons';
 import Section from '../Section';
 import Title from '../Title';
 import styled from "styled-components";
 import {setColor} from '../styles';
-import PrimaryBtn from '../Buttons'
+import PrimaryBtn from '../Buttons';
+import StepLarge from './StepLarge';
+// import Step from './Step';
 
 const StyledSteps = styled.div `
   margin: 1rem auto;
@@ -16,17 +17,17 @@ const StyledSteps = styled.div `
   p {
     margin: 1rem;
   }
-  .step {
+  /* .step {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
     margin: 0 auto;
     border-radius: 50%;
-  }
-  .step-icon {
+  } */
+  /* .step-icon {
     font-size: 4rem;
-  }
+  } */
   .step-separator {
     border-left: 6px solid ${setColor.grey};
     height: 3rem;
@@ -71,29 +72,26 @@ const HowItWorks = () => {
       <Title title="How it works" center/>
       <StyledContainer>
         <StyledSteps>
-
-          <div className="step">
-            <p>Step 1</p>
-            <FontAwesomeIcon icon={faMobileAlt} className="step-icon"/>
-            <p>Contact Me</p>
-          </div>
+          <StepLarge 
+            icon={faMobileAlt}
+            title="Step 1"
+            text="Contact Me"
+          />
           <div className="step-separator"></div>
-
-          <div className="step">
-            <p>Step 2</p>
-            <FontAwesomeIcon icon={faCalendarAlt} className="step-icon"/>
-            <p>Arrange a date</p>
-          </div>
+          <StepLarge 
+            icon={faCalendarAlt}
+            title="Step 2"
+            text="Arrange a date"
+          />
           <div className="step-separator"></div>
-          
-          <div className="step">
-            <p>Step 3</p>
-            <FontAwesomeIcon icon={faUtensils} className="step-icon"/>
-            <p>I cook, you enjoy</p>
-          </div>
-          </StyledSteps>
-          <PrimaryBtn>Read More</PrimaryBtn>
-        </StyledContainer>
+          <StepLarge 
+            icon={faUtensils}
+            title="Step 3"
+            text="I cook, you enjoy"
+          />
+        </StyledSteps>
+        <PrimaryBtn>Read More</PrimaryBtn>
+      </StyledContainer>
     </Section>
   );
 };

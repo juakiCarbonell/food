@@ -7,6 +7,7 @@ import { ThemeProvider } from 'styled-components';
 import theme from '../UI/theme';
 import IndexPage from './IndexPage';
 import AboutPage from './AboutPage';
+import HowItWorks from './HowItWorksPage';
 
 const App = (props) => {
 
@@ -25,6 +26,11 @@ const App = (props) => {
           path="/about"
           exact
           component={AboutPage}
+        />
+        <Route
+          path="/how_it_works"
+          exact
+          component={HowItWorks}
         />
 
   

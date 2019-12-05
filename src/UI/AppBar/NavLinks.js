@@ -18,7 +18,7 @@ const NavLinks = (props) => {
   return (
     <StyledNavLinks {...props}>
       <NavLinkItem text="Home" color="white" route="/"/>
-      <NavLinkItem text="How it works" color="white" route="/"/>
+      <NavLinkItem text="How it works" color="white" route="/how_it_works"/>
       <NavLinkItem text="Menu" color="white" route="/"/>
       <NavLinkItem text="About" color="white" route="/about"/>
       <NavLinkItem text="Contact" color="white" route="/"/>
