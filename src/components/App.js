@@ -9,6 +9,7 @@ import IndexPage from './IndexPage';
 import AboutPage from './AboutPage';
 import HowItWorks from './HowItWorksPage';
 import MenuPage from './MenuPage';
+import ContactPage from './ContactPage';
 
 const App = (props) => {
 
@@ -37,6 +38,11 @@ const App = (props) => {
           path="/how_it_works"
           exact
           component={HowItWorks}
+        />
+        <Route
+          path="/contact"
+          exact
+          component={ContactPage}
         />
 
   

@@ -47,7 +47,7 @@ const CollapseMenu = (props) => {
           <li><Link to="/how_it_works">How it Works</Link></li>
           <li><Link to="/menu">Menu</Link></li>
           <li><Link to="/about">About Me</Link></li>
-          <li><Link to="/">Contact</Link></li>
+          <li><Link to="/contact">Contact</Link></li>
           
         </NavLinks>
         

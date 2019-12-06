@@ -21,7 +21,7 @@ const NavLinks = (props) => {
       <NavLinkItem text="How it works" color="white" route="/how_it_works"/>
       <NavLinkItem text="Menu" color="white" route="/menu"/>
       <NavLinkItem text="About" color="white" route="/about"/>
-      <NavLinkItem text="Contact" color="white" route="/"/>
+      <NavLinkItem text="Contact" color="white" route="/contact"/>
     </StyledNavLinks>
   );
 };
