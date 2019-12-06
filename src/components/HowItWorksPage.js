@@ -2,10 +2,6 @@ import React from 'react';
 import Section from '../UI/Section';
 import styled from "styled-components";
 import { faMobileAlt, faCalendarAlt, faUtensils } from '@fortawesome/free-solid-svg-icons';
-import cookingImage from '../multimedia/images/about_cooking.jpg';
-import ingredientsImage from '../multimedia/images/about_ingredients.jpg';
-import ImageContainer from '../UI/About/AboutImageContainer';
-import TextContainer from '../UI/About/AboutTextContainer';
 import { useMediaQuery } from 'react-responsive';
 import {setColor} from '../UI/styles';
 import Step from '../UI/HowItWorks/Step';
@@ -15,6 +11,13 @@ const AboutCenterTop = styled.div`
   margin: 6rem auto 2rem;
   .about-section {
     margin-bottom: 3rem;
+  }
+
+  .step-text {
+    letter-spacing: 2px;
+    text-align: center;
+    margin-top: 2rem;
+    align-self: center;
   }
 
   
@@ -48,27 +51,59 @@ const HowItWorks = () => {
         <AboutCenterTop>
           <Step 
             icon={faMobileAlt}
-            title="Step 1"
+            number="1"
             text="Contact Me"
           />
+          <div className="step-text">
+            <p>
+              There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humou
+            </p>
+          </div>
         </AboutCenterTop>
       </Section>
       <Section color={setColor.grey}>
         <AboutCenter>
-          <Step 
-            icon={faCalendarAlt}
-            title="Step 2"
-            text="Arrange a date"
-          />      
+          {isDesktopOrLaptop ? 
+            <>
+              <div className="step-text">
+                <p>
+                  There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humou
+                </p>
+              </div>
+              <Step 
+                icon={faCalendarAlt}
+                number="2"
+                text="Arrange a date"
+              />
+            </>  
+            :
+            <>
+              <Step 
+                icon={faCalendarAlt}
+                number="2"
+                text="Arrange a date"
+              />
+              <div className="step-text">
+                <p>
+                  There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humou
+                </p>
+              </div>  
+            </> 
+          }
         </AboutCenter>
       </Section>
       <Section>
         <AboutCenter>
           <Step 
             icon={faUtensils}
-            title="Step 3"
+            number="3"
             text="I cook, you enjoy"
           />
+          <div className="step-text">
+            <p>
+              There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humou
+            </p>
+          </div>
         </AboutCenter>
       </Section>
     </>

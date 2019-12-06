@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { color } from 'styled-system';
-import {Link, NavLink} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 
 
 const StyledNavLink = styled.li`
@@ -17,13 +17,16 @@ const StyledNavLink = styled.li`
       text-decoration: none;
       color: red
     }
+  .selected {
+    font-weight: bold;
+  }
   }
 `
 
 const NavLinkItem = (props) => {
   return (
     <StyledNavLink {...props}>
-      <Link to={props.route}>{props.text}</Link>
+      <NavLink to={props.route} activeClassName="selected">{props.text}</NavLink>
     </StyledNavLink>
   );
 };
