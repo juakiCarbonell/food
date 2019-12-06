@@ -8,6 +8,7 @@ import theme from '../UI/theme';
 import IndexPage from './IndexPage';
 import AboutPage from './AboutPage';
 import HowItWorks from './HowItWorksPage';
+import MenuPage from './MenuPage';
 
 const App = (props) => {
 
@@ -21,6 +22,11 @@ const App = (props) => {
           path="/"
           exact
           component={IndexPage}
+        />
+        <Route
+          path="/menu"
+          exact
+          component={MenuPage}
         />
         <Route
           path="/about"
