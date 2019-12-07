@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { setColor} from '../styles';
-import {Link} from 'react-router-dom';
-
+import { NavLink } from 'react-router-dom';
 
 const CollapseWrapper = styled.div`
   background: ${setColor.darkRed};
@@ -26,14 +25,20 @@ const NavLinks = styled.ul`
   & a {
     font-size: 1.4rem;
     line-height: 2;
-    color: #dfe6e9;
-    text-transform: uppercase;
+    color: ${setColor.black};
+    text-transform: capitalize;
     text-decoration: none;
     cursor: pointer;
     &:hover {
-      color: #fdcb6e;
-      border-bottom: 1px solid #fdcb6e;
+      text-decoration: none;
+      color: ${setColor.white};
+      background-color: ${setColor.activeDarkRed};
     }
+  }
+  .selected {
+    font-weight: bold;
+    color: ${setColor.white};
+    background-color: ${setColor.activeDarkRed};
   }
 `;
 
@@ -43,11 +48,11 @@ const CollapseMenu = (props) => {
     return (
       <CollapseWrapper {...props}>
         <NavLinks>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/how_it_works">How it Works</Link></li>
-          <li><Link to="/menu">Menu</Link></li>
-          <li><Link to="/about">About Me</Link></li>
-          <li><Link to="/contact">Contact</Link></li>
+          <li><NavLink to="/" exact>Home</NavLink></li>
+          <li><NavLink to="/how_it_works">How it Works</NavLink></li>
+          <li><NavLink to="/menu">Menu</NavLink></li>
+          <li><NavLink to="/about">About Me</NavLink></li>
+          <li><NavLink to="/contact">Contact</NavLink></li>
           
         </NavLinks>
         

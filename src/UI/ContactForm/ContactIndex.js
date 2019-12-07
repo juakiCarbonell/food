@@ -31,7 +31,7 @@ const ButtonContainer = styled.div`
 
 const ContactIndex = () => {
   return (
-    <Section>
+    <Section >
       <Title title="Contact me" center />
       <Contact>
         <ContactForm />

@@ -10,6 +10,7 @@ import AboutPage from './AboutPage';
 import HowItWorks from './HowItWorksPage';
 import MenuPage from './MenuPage';
 import ContactPage from './ContactPage';
+import ScrollToTop from './ScrollToTop';
 
 const App = (props) => {
 
@@ -17,6 +18,7 @@ const App = (props) => {
   return (
     <BrowserRouter>
       <ThemeProvider theme={theme}>
+        <ScrollToTop />
         <GlobalStyles/>
         <NavBar bg="darkReed"/>
         <Route

@@ -29,7 +29,7 @@ const IndexPage = () => {
       <Image img={coockingImg}/>
       { isDesktopOrLaptop ? <ContactIndex /> : <Contact />}
       <Image img={cheersImg}/>
-      <Follow />
+      <Follow showPhone= {true}/>
     </>
   );
 };

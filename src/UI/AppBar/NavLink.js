@@ -2,31 +2,33 @@ import React from 'react';
 import styled from 'styled-components';
 import { color } from 'styled-system';
 import {NavLink} from 'react-router-dom';
+import {setColor} from '../styles';
 
 
 const StyledNavLink = styled.li`
   & a {
     padding: 1rem;
-    outline: 1px solid red;
     text-decoration: none;
     ${color}
-    text-transform: uppercase;
+    text-transform: capitalize;
     cursor: pointer;
-    ${color}
     &:hover {
       text-decoration: none;
-      color: red
+      color: ${setColor.white};
+      background-color: ${setColor.activeDarkRed};
     }
+  }
   .selected {
     font-weight: bold;
-  }
+    color: ${setColor.white};
+    background-color: ${setColor.activeDarkRed};
   }
 `
 
 const NavLinkItem = (props) => {
   return (
     <StyledNavLink {...props}>
-      <NavLink to={props.route} activeClassName="selected">{props.text}</NavLink>
+      <NavLink exact to={props.route} activeClassName="selected">{props.text}</NavLink>
     </StyledNavLink>
   );
 };

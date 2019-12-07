@@ -1,5 +1,6 @@
 export const setColor = {
   darkRed: "#8B0000",
+  activeDarkRed: "#660000",
   white: "#FFF",
   black: "#222",
   grey: "#CCC"

@@ -7,7 +7,7 @@ import Banner from './Banner';
 const Jumbotron = () => {
   return (
     <Hero img={img}>
-      <Banner title="Luis Titos" text="Paellas a domicilio">
+      <Banner title="Luis Titos" text="Paellas at home">
         {/*<Buttons>View Details</Buttons> */}
       </Banner>
     </Hero>

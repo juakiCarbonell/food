@@ -6,9 +6,9 @@ import PrimaryBtn from '../Buttons';
 import ContactInfo from './ContactInfo'
 import {setColor} from "../styles";
 
-const Contact = () => {
+const Contact = ({contactPage}) => {
   return (
-    <Section color={setColor.grey}>
+    <Section color={ contactPage ? setColor.grey: setColor.white}>
       <Title title="Contact me" center />
       <ContactInfo />
       <ContactForm />
