@@ -25,7 +25,7 @@ const AboutCenterTop = styled.div`
 `
 
 const PaellaCenter = styled.div`
-  width: 75vw;
+  width: 90vw;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
