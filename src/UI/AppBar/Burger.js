@@ -26,6 +26,9 @@ const Wrapper = styled.div`
       transform: ${({ open }) => open ? 'rotate(-45deg) translate(5px, 0px)' : 'rotate(0)'};
     }
   }
+  @media (min-width: 768px) {
+    display: none;
+  }
 `
 const Linie = styled.div`
   width: 40px;

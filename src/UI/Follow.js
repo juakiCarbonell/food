@@ -2,30 +2,21 @@ import React from 'react';
 import Title from './Title';
 import Section from './Section';
 import ContactInfo from './ContactForm/ContactInfo';
-import styled from "styled-components";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInstagram,faTwitter, faFlickr, faFacebookSquare } from '@fortawesome/free-brands-svg-icons';
+import {setColor} from "./styles";
+import FollowIcons from './FollowIcons'
 
 
-const StyledIcons = styled.div`
-  font-size: 2rem;
-  display: flex;
-  justify-content: space-around;
-  width: 66%;
-  margin: 2rem auto;
-`
-
-const Follow = () => {
+const Follow = ({showPhone, contactPage}) => {
   return (
-    <Section>
+    <Section color={ contactPage ? setColor.grey: setColor.white}>
       <Title title="Follow Me" center />
-      <StyledIcons>
-        <FontAwesomeIcon icon={faInstagram} />
-        <FontAwesomeIcon icon={faFacebookSquare} />
-        <FontAwesomeIcon icon={faTwitter} />
-        <FontAwesomeIcon icon={faFlickr} />
-      </StyledIcons>
-      <ContactInfo />
+      <FollowIcons />
+      {showPhone ?
+        <ContactInfo />
+      :
+        null
+      }
+      
 
     </Section>
   );

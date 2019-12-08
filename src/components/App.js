@@ -1,40 +1,53 @@
 import React from 'react';
 import NavBar from '../UI/AppBar/NavBar';
-import CardContainer from '../UI/CardContainer';
-import Video from './Video';
-import Jumbotron from '../UI/Jumbotron/Jumbotron';
-import Image from '../UI/Image';
-import About from '../UI/About/About';
-import Paellas from '../UI/Paellas';
 import GlobalStyles from '../UI/GlobalStyles';
-import Testimonial from '../UI/Testimonial/Testimonial';
-import Contact from '../UI/ContactForm/Contact';
-import coockingImg from '../multimedia/images/coocking.jpg';
-import cheersImg from '../multimedia/images/cheers.jpg';
-import Follow from '../UI/Follow';
+import {BrowserRouter, Route} from 'react-router-dom';
 
-import { ThemeProvider } from 'styled-components'
-import theme from '../UI/theme'
+import { ThemeProvider } from 'styled-components';
+import theme from '../UI/theme';
+import IndexPage from './IndexPage';
+import AboutPage from './AboutPage';
+import HowItWorks from './HowItWorksPage';
+import MenuPage from './MenuPage';
+import ContactPage from './ContactPage';
+import ScrollToTop from './ScrollToTop';
 
 const App = (props) => {
 
 
   return (
-    
+    <BrowserRouter>
       <ThemeProvider theme={theme}>
+        <ScrollToTop />
         <GlobalStyles/>
         <NavBar bg="darkReed"/>
-        <Jumbotron />
-        <About />
-        <Paellas />
-        <Testimonial />
-        <Image img={coockingImg}/>
-        <Contact />
-        <Image img={cheersImg}/>
-        <Follow />
-        {/* <Video /> */}
-        {/* <CardContainer justifyContent='space-around'/> */}
+        <Route
+          path="/"
+          exact
+          component={IndexPage}
+        />
+        <Route
+          path="/menu"
+          exact
+          component={MenuPage}
+        />
+        <Route
+          path="/about"
+          exact
+          component={AboutPage}
+        />
+        <Route
+          path="/how_it_works"
+          exact
+          component={HowItWorks}
+        />
+        <Route
+          path="/contact"
+          exact
+          component={ContactPage}
+        />
       </ThemeProvider>
+    </BrowserRouter>
   );
 };
 

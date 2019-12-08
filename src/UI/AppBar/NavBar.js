@@ -5,6 +5,7 @@ import Burger from './Burger';
 import CollapseMenu from './CollapseMenu';
 import logo from '../../multimedia/images/logo.png';
 import { setColor} from '../styles';
+import NavLinks from './NavLinks';
 
 const NavBarContainer = styled.nav`
   position: fixed;
@@ -36,6 +37,7 @@ const NavBar = () => {
         <FlexBox>
           <Brand logo={logo} />
           <Burger open={open} handleClick={handleClick}/>
+          <NavLinks />
         </FlexBox>
       </NavBarContainer>
       <CollapseMenu open={open}/>
