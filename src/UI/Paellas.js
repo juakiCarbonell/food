@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Title from './Title';
 import Section from './Section';
 import foodData from '../foodData/foodData';
-import {setColor, setFont, setTransition} from "./styles";
+import {setColor} from "./styles";
 import PrimaryBtn from './Buttons';
 
 
@@ -12,7 +12,7 @@ const PaellaCenter = styled.div`
   width: 75vw;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
   grid-column-gap: 2.8rem;
   @media (min-width: 1200px) {
     width: 100vw;

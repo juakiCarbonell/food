@@ -22,7 +22,7 @@ const Brand = ({logo}) => {
   return (
     <BrandContainer>
       <Image src={logo}/>
-      <BrandName>Luis Titos</BrandName>
+      <BrandName>Branch Name</BrandName>
     </BrandContainer>
   );
 };

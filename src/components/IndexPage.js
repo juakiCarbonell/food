@@ -13,6 +13,7 @@ import Follow from '../UI/Follow';
 import HowItWorks from '../UI/HowItWorks/HowItWorks';
 import ContactIndex from '../UI/ContactForm/ContactIndex';
 import { useMediaQuery } from 'react-responsive';
+// import Video from '../UI/Video';
 
 const IndexPage = () => {
   const isDesktopOrLaptop = useMediaQuery({

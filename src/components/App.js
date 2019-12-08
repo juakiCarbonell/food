@@ -46,11 +46,6 @@ const App = (props) => {
           exact
           component={ContactPage}
         />
-
-  
-        
-        {/* <Video /> */}
-        {/* <CardContainer justifyContent='space-around'/> */}
       </ThemeProvider>
     </BrowserRouter>
   );

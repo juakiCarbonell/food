@@ -16,6 +16,11 @@ const AboutCenter = styled.div`
       letter-spacing: 3px;
     }
   }
+  .about-img {
+    img {
+      width: 100%;
+    }
+  }
   @media (min-width: 1200px){
     width: 100vw;
     .about-info,

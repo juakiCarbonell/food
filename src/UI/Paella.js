@@ -1,7 +1,6 @@
 import React from 'react';
-import {SmallBtn} from './Buttons';
 import styled from "styled-components";
-import {setColor, setFont, setTransition, setShadow} from "./styles";
+import {setColor, setTransition, setShadow} from "./styles";
 import PropsTypes from 'prop-types';
 
 
