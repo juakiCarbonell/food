@@ -9,7 +9,7 @@ const AboutCenter = styled.div`
   width: 90vw;
   margin: 0 auto;
   .about-info{
-    padding: 1.5rem;
+    padding: 1.5rem 0;
   }
   .about-info {
     p {

@@ -10,7 +10,7 @@ import StepLarge from './StepLarge';
 
 const StyledSteps = styled.div `
   margin: 1rem auto;
-  width: 90vw;
+  /* width: 90vw; */
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -29,7 +29,7 @@ const PaellaCenter = styled.div`
 `
 
 const ButtonContainer = styled.div`
-  width: 75vw;
+  width: 90vw;
   margin: 0 auto;
   @media (min-width: 1200px) {
     width: 100vw;

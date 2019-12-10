@@ -5,6 +5,7 @@ import { faMobileAlt, faCalendarAlt, faUtensils } from '@fortawesome/free-solid-
 import { useMediaQuery } from 'react-responsive';
 import {setColor} from '../UI/styles';
 import Step from '../UI/HowItWorks/Step';
+import Title from '../UI/Title';
 
 const AboutCenterTop = styled.div`
   width: 90vw;
@@ -38,6 +39,10 @@ const AboutCenter = styled(AboutCenterTop)`
   }
 `
 
+const TitleContianer = styled.div`
+  margin-top: 6rem;
+`
+
 
 const HowItWorks = () => {
 
@@ -48,6 +53,9 @@ const HowItWorks = () => {
   return (
     <>
       <Section>
+        <TitleContianer>
+          <Title title="How it Works" center />
+        </TitleContianer>
         <AboutCenterTop>
           <Step 
             icon={faMobileAlt}

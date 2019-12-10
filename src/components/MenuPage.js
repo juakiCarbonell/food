@@ -43,10 +43,6 @@ const TitleContianer = styled.div`
 
 const MenuPage = () => {
   const [paellas, setPaellas] = useState(BigMenu);
-  console.log(paellas);
-  const isDesktopOrLaptop = useMediaQuery({
-    query: '(min-device-width: 768px)'
-  })
 
   return (
       <Section>
