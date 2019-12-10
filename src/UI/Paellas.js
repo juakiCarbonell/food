@@ -6,6 +6,7 @@ import Section from './Section';
 import foodData from '../foodData/foodData';
 import {setColor} from "./styles";
 import PrimaryBtn from './Buttons';
+import { Link } from 'react-router-dom';
 
 
 const PaellaCenter = styled.div`
@@ -50,7 +51,9 @@ const Paellas = () => {
         
         </PaellaCenter>
         <ButtonContainer>
-          <PrimaryBtn>All Paellas</PrimaryBtn>
+          <Link to="/menu">
+            <PrimaryBtn>All Paellas</PrimaryBtn>
+          </Link>
         </ButtonContainer>
       
     </Section>

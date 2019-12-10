@@ -6,6 +6,7 @@ import styled from "styled-components";
 import {setColor} from '../styles';
 import PrimaryBtn from '../Buttons';
 import StepLarge from './StepLarge';
+import { Link } from 'react-router-dom';
 // import Step from './Step';
 
 const StyledSteps = styled.div `
@@ -55,7 +56,6 @@ const StyledSteps = styled.div `
 
 `
 const StyledContainer = styled.div `
-  padding: 1.5rem;
   @media (min-width: 768px){
     margin: 0 auto;
   }
@@ -90,7 +90,9 @@ const HowItWorks = () => {
             text="I cook, you enjoy"
           />
         </StyledSteps>
-        <PrimaryBtn>Read More</PrimaryBtn>
+        <Link to="/how_it_works">
+          <PrimaryBtn>Read More</PrimaryBtn>
+        </Link>
       </StyledContainer>
     </Section>
   );

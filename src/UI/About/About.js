@@ -4,13 +4,11 @@ import React from 'react';
 import Title from '../Title';
 import AboutImage from '../../multimedia/images/chef.jpg';
 import PrimaryBtn from '../Buttons';
+import { Link } from 'react-router-dom';
 
 const AboutCenter = styled.div`
   width: 90vw;
   margin: 0 auto;
-  .about-info{
-    padding: 1.5rem 0;
-  }
   .about-info {
     p {
       letter-spacing: 3px;
@@ -56,7 +54,9 @@ const About = () => {
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur nulla, nisi officiis delectus voluptatum inventore ab sapiente architecto magni aperiam ut dicta vero qui similique ea harum aliquam recusandae neque.
           </p>
-          <PrimaryBtn>Read More</PrimaryBtn>
+          <Link to="/about">
+            <PrimaryBtn>Read More</PrimaryBtn>
+          </Link>
         </div>
       </AboutCenter>
     </Section>
