@@ -14,7 +14,7 @@ const ContactInfo = () => {
   return (
     <StyledInfo>
       <p>Telf: 012 345 678</p>
-      <p>Email: paellas@luistitos.de</p>
+      <p>Email: paellas@branchName.de</p>
     </StyledInfo>
   );
 };
