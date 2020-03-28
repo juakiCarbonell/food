@@ -39,7 +39,7 @@ const Linie = styled.div`
 const Burger = (props) => {
   console.log(props)
   return (
-    <Wrapper onClick={props.handleClick} {...props}>
+    <Wrapper onClick={props.clicked} {...props}>
       <Linie />
       <Linie />
       <Linie />

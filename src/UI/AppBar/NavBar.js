@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import styled from 'styled-components';
 import Brand from './Brand';
 import Burger from './Burger';
-import CollapseMenu from './CollapseMenu';
 import logo from '../../multimedia/images/logo.png';
 import { setColor} from '../styles';
 import NavLinks from './NavLinks';
@@ -22,25 +21,17 @@ const FlexBox = styled.div`
   height: 5rem;
 `
 
-const NavBar = () => {
-
-  const [open, setOpen] = useState(false);
-
-  const handleClick = () => {
-    setOpen(!open)
-  }
-
-
+const NavBar = (props) => {
   return (
     <>
       <NavBarContainer>
         <FlexBox>
           <Brand logo={logo} />
-          <Burger open={open} handleClick={handleClick}/>
+          <Burger clicked={props.drawerToggleClick} open={props.open}/>
           <NavLinks />
         </FlexBox>
       </NavBarContainer>
-      <CollapseMenu open={open}/>
+    
     </>
   );
 };

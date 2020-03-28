@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css }  from 'styled-components';
 import { setColor} from '../styles';
 import { NavLink } from 'react-router-dom';
 
@@ -11,8 +11,8 @@ const CollapseWrapper = styled.div`
   z-index: 3;
   height: 100vh;
   width: 45vw;
-  transform: ${({ open }) => open ? 'translateX(0%)' : 'translateX(100%)'};
-  transition: transform 1s linear;
+  transform: ${ props => (props.open ? 'translateX(0)' : 'translateX(100%)')};
+  transition: all .9s ease-out;
 `;
 
 const NavLinks = styled.ul`
@@ -44,15 +44,16 @@ const NavLinks = styled.ul`
 
 
 const CollapseMenu = (props) => { 
+  console.log('props', props)
   if(props.open){
     return (
       <CollapseWrapper {...props}>
         <NavLinks>
-          <li><NavLink to="/" exact>Home</NavLink></li>
-          <li><NavLink to="/how_it_works">How it Works</NavLink></li>
-          <li><NavLink to="/menu">Menu</NavLink></li>
-          <li><NavLink to="/about">About Me</NavLink></li>
-          <li><NavLink to="/contact">Contact</NavLink></li>
+          <li><NavLink to="/" exact onClick={props.closed}>Home</NavLink></li>
+          <li><NavLink to="/how_it_works" onClick={props.closed}>How it Works</NavLink></li>
+          <li><NavLink to="/menu" onClick={props.closed}>Menu</NavLink></li>
+          <li><NavLink to="/about" onClick={props.closed}>About Me</NavLink></li>
+          <li><NavLink to="/contact" onClick={props.closed}>Contact</NavLink></li>
           
         </NavLinks>
         
