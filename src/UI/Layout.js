@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import NavBar from '../UI/AppBar/NavBar';
-import CollapseMenu from '../UI/AppBar/CollapseMenu';
+
+import NavBar from '../components/AppBar/NavBar';
+import CollapseMenu from '../components/AppBar/CollapseMenu';
 
 const Layout = (props) => {
 

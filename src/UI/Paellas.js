@@ -1,19 +1,18 @@
-import React, {useState} from 'react';
-import Paella from './Paella';
+import React, { useState } from "react";
+import Paella from "./Paella";
 import styled from "styled-components";
-import Title from './Title';
-import Section from './Section';
-import foodData from '../foodData/foodData';
-import {setColor} from "./styles";
-import PrimaryBtn from './Buttons';
-import { Link } from 'react-router-dom';
-
+import Title from "./Title";
+import Section from "./Section";
+import foodData from "../foodData/foodData";
+import { setColor } from "./styles";
+import PrimaryBtn from "./Buttons";
+import { Link } from "react-router-dom";
 
 const PaellaCenter = styled.div`
   width: 90vw;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-column-gap: 2.8rem;
   @media (min-width: 1200px) {
     width: 100vw;
@@ -27,7 +26,7 @@ const PaellaCenter = styled.div`
   @media (min-width: 1200px) {
     grid-template-columns: repeat(3, 1fr);
   } */
-`
+`;
 
 const ButtonContainer = styled.div`
   width: 90vw;
@@ -36,26 +35,23 @@ const ButtonContainer = styled.div`
     width: 100vw;
     max-width: 1170px;
   }
-`
+`;
 
 const Paellas = () => {
-
-  const [paellas, setPaellas] = useState(foodData);
+  const [paellas] = useState(foodData);
   return (
     <Section color={setColor.grey}>
       <Title title="My Specialities" center />
       <PaellaCenter>
-        {paellas.map((paella)=> {
-          return <Paella key={paella.id} paella={paella} />
+        {paellas.map((paella) => {
+          return <Paella key={paella.id} paella={paella} />;
         })}
-        
-        </PaellaCenter>
-        <ButtonContainer>
-          <Link to="/menu">
-            <PrimaryBtn>All Paellas</PrimaryBtn>
-          </Link>
-        </ButtonContainer>
-      
+      </PaellaCenter>
+      <ButtonContainer>
+        <Link to="/menu">
+          <PrimaryBtn>All Paellas</PrimaryBtn>
+        </Link>
+      </ButtonContainer>
     </Section>
   );
 };
