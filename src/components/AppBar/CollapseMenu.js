@@ -6,14 +6,18 @@ import { setColor } from '../../UI/styles';
 
 const CollapseWrapper = styled.div`
   background: ${setColor.darkRed};
-  position: fixed;
-  top: 4.5rem;
-  right: 0;
-  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   height: 100vh;
-  width: 45vw;
-  transform: ${ props => (props.open ? 'translateX(0)' : 'translateX(100%)')};
-  transition: all .9s ease-out;
+  text-align: left;
+  padding: 2rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: transform 0.3s ease-in-out;
+  transform: ${({ open }) => open ? 'translateX(0)' :'translateX(100%)'};
+  /* transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-100%)'}; */
 `;
 
 const NavLinks = styled.ul`
@@ -44,24 +48,21 @@ const NavLinks = styled.ul`
 `;
 
 
-const CollapseMenu = (props) => { 
-  if(props.open){
-    return (
-      <CollapseWrapper {...props}>
-        <NavLinks>
-          <li><NavLink to="/" exact onClick={props.closed}>Home</NavLink></li>
-          <li><NavLink to="/how_it_works" onClick={props.closed}>How it Works</NavLink></li>
-          <li><NavLink to="/menu" onClick={props.closed}>Menu</NavLink></li>
-          <li><NavLink to="/about" onClick={props.closed}>About Me</NavLink></li>
-          <li><NavLink to="/contact" onClick={props.closed}>Contact</NavLink></li>
-          
-        </NavLinks>
+const CollapseMenu = ({ open, clicked }) => { 
+  console.log('ee')
+  return (
+    <CollapseWrapper open={open}>
+      <NavLinks>
+        <li><NavLink to="/" exact onClick={() => clicked(false)}>Home</NavLink></li>
+        <li><NavLink to="/how_it_works" onClick={() => clicked(false)}>How it Works</NavLink></li>
+        <li><NavLink to="/menu" onClick={() => clicked(false)}>Menu</NavLink></li>
+        <li><NavLink to="/about" onClick={() => clicked(false)}>About Me</NavLink></li>
+        <li><NavLink to="/contact" onClick={() => clicked(false)}>Contact</NavLink></li>
         
-      </CollapseWrapper>
-    );
-
-  }
-  return null;
+      </NavLinks>
+      
+    </CollapseWrapper>
+  );
   
 };
 
