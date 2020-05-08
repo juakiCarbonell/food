@@ -26,11 +26,12 @@ const NavLinks = styled.ul`
   
   & li {
     transition: all 300ms linear 0s;
+    margin-bottom: 1.2rem;
   }
   & a {
     font-size: 1.4rem;
     line-height: 2;
-    color: ${setColor.black};
+    color: ${setColor.white};
     text-transform: capitalize;
     text-decoration: none;
     cursor: pointer;

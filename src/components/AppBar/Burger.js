@@ -25,7 +25,7 @@ const Wrapper = styled.div`
   div {
     width: 2rem;
     height: 0.25rem;
-    background: ${setColor.black};
+    background: ${setColor.white};
     border-radius: 10px;
     transition: all 0.3s linear;
     position: relative;
