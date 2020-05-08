@@ -4,45 +4,58 @@ import styled from 'styled-components';
 import { setColor } from '../../UI/styles';
 
 const Wrapper = styled.div`
-  width: 40px;
-  height: 35px;
-  cursor: pointer;
+  position: absolute;
+  top: 28%;
+  right: 2rem;
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
-  background-color: ${setColor.darkRed};
-  
+  justify-content: space-around;
+  width: 2rem;
+  height: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+
+  &:focus {
+    outline: none;
+  }
+
   div {
+    width: 2rem;
+    height: 0.25rem;
+    background: ${setColor.white};
+    border-radius: 10px;
     transition: all 0.3s linear;
-    
+    position: relative;
+    transform-origin: 1px;
+
     :first-child {
-      transform-origin: 0 100%;
-      transform: ${({ open }) => open ? 'rotate(45deg) translate(1px, -3px)' : 'rotate(0)'};
+      transform: ${({ open }) => open ? 'rotate(45deg)' : 'rotate(0)'};
     }
+
     :nth-child(2) {
       opacity: ${({ open }) => open ? '0' : '1'};
+      /* transform: ${({ open }) => open ? 'translateX(20px)' : 'translateX(0)'}; */
     }
-    :last-child {
-      transform-origin: 0% 0%;
-      transform: ${({ open }) => open ? 'rotate(-45deg) translate(5px, 0px)' : 'rotate(0)'};
+
+    :nth-child(3) {
+      transform: ${({ open }) => open ? 'rotate(-45deg)' : 'rotate(0)'};
     }
   }
   @media (min-width: 768px) {
     display: none;
   }
 `
-const Linie = styled.div`
-  width: 40px;
-  height: 5px;
-  background-color: ${setColor.black};
-`
 
-const Burger = (props) => {
+
+const Burger = ({ open, clicked }) => {
   return (
-    <Wrapper onClick={props.clicked} {...props}>
-      <Linie />
-      <Linie />
-      <Linie />
+    <Wrapper open={open} onClick={() => clicked(!open)}>
+      <div />
+      <div />
+      <div />
       
     </Wrapper>
   );

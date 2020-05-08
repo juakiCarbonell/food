@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import Brand from './Brand';
 import Burger from './Burger';
 import NavLinks from './NavLinks';
+import CollapseMenu from './CollapseMenu';
 
 import logo from '../../multimedia/images/logo.png';
 
@@ -24,14 +25,16 @@ const FlexBox = styled.div`
   height: 5rem;
 `
 
-const NavBar = (props) => {
+const NavBar = () => {
+  const [open, setOpen] = useState(false);
   return (
     <>
       <NavBarContainer>
         <FlexBox>
           <Brand logo={logo} />
-          <Burger clicked={props.drawerToggleClick} open={props.open}/>
+          <Burger clicked={setOpen} open={open}/>
           <NavLinks />
+          <CollapseMenu clicked={setOpen} open={open} />
         </FlexBox>
       </NavBarContainer>
     
