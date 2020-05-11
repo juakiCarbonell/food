@@ -12,14 +12,14 @@ import Contact from '../components/ContactForm/Contact';
 
 const AboutCenterTop = styled.div`
   width: 90vw;
-  margin: 5rem auto 2rem;
+  margin: 0 auto 2rem;
   .about-section {
     margin-bottom: 3rem;
   }
 
   
   @media (min-width: 1200px){
-    margin-top: 5rem;
+    /* margin-top: 5rem; */
     max-width: 1170px;
     width: 100vw;
     display: grid;
@@ -45,11 +45,9 @@ const ContactPage = () => {
 
   return (
     <>
-      <Section>
-        <AboutCenterTop>
-          { isDesktopOrLaptop ? <ContactIndex/> : <Contact/>}
-        </AboutCenterTop>
-      </Section>
+      <AboutCenterTop>
+        { isDesktopOrLaptop ? <ContactIndex/> : <Contact/>}
+      </AboutCenterTop>
       <Section color= {setColor.grey}>
         <AboutCenter>
           <Title title="Follow Me" center />

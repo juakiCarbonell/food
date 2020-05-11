@@ -39,10 +39,6 @@ const AboutCenter = styled(AboutCenterTop)`
   }
 `
 
-const TitleContianer = styled.div`
-  margin-top: 6rem;
-`
-
 
 const HowItWorks = () => {
 
@@ -53,9 +49,7 @@ const HowItWorks = () => {
   return (
     <>
       <Section>
-        <TitleContianer>
-          <Title title="How it Works" center />
-        </TitleContianer>
+        <Title title="How it Works" center />
         <AboutCenterTop>
           <Step 
             icon={faMobileAlt}

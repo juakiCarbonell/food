@@ -35,19 +35,13 @@ const PaellaCenter = styled.div`
   }
 `
 
-const TitleContianer = styled.div`
-  margin-top: 6rem;
-`
-
 
 const MenuPage = () => {
   const [paellas] = useState(BigMenu);
 
   return (
       <Section>
-        <TitleContianer>
-          <Title title="Menu" center />
-        </TitleContianer>
+        <Title title="Menu" center />
         <AboutCenterTop>
           <PaellaCenter>
             {paellas.map((paella)=> {

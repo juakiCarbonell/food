@@ -14,14 +14,14 @@ import {setColor} from '../UI/styles';
 
 const AboutCenterTop = styled.div`
   width: 90vw;
-  margin: 6rem auto 2rem;
+  margin: 0rem auto 2rem;
   .about-section {
     margin-bottom: 3rem;
   }
 
   
   @media (min-width: 1200px){
-    margin-top: 6rem;
+    /* margin-top: 6rem; */
     max-width: 1170px;
     width: 100vw;
     display: grid;

@@ -15,6 +15,8 @@ const NavBarContainer = styled.nav`
   width: 100%;
   background-color: ${setColor.darkRed};
   z-index: 5;
+  top: 0;
+  left: 0;
 `
 const FlexBox = styled.div`
   width: 90%;
@@ -22,7 +24,7 @@ const FlexBox = styled.div`
   align-items: center;
   margin: 0 auto;
   justify-content: space-between;
-  height: 5rem;
+  height: 70px;
 `
 
 const NavBar = () => {

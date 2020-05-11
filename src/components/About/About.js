@@ -42,6 +42,10 @@ const AboutCenter = styled.div`
   }
 `
 
+const AboutInfo = styled.div`
+  padding-top: 1rem;
+`
+
 
 const About = () => {
   return (
@@ -50,7 +54,7 @@ const About = () => {
         <div className="about-img">
           <img src={AboutImage} alt="Sobre mi"/>
         </div>
-        <div className="about-info">
+        <AboutInfo>
           <Title title="About Me" center></Title>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur nulla, nisi officiis delectus voluptatum inventore ab sapiente architecto magni aperiam ut dicta vero qui similique ea harum aliquam recusandae neque.
@@ -58,7 +62,7 @@ const About = () => {
           <Link to="/about">
             <PrimaryBtn>Read More</PrimaryBtn>
           </Link>
-        </div>
+        </AboutInfo>
       </AboutCenter>
     </Section>
   );
